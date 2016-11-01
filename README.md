@@ -1,5 +1,5 @@
-# Hackerrank-Solution
-A repository for my solutions to hackerrank problems(https://www.hackerrank.com/challenges).
+# Competitive Coding
+A repository for my solutions to hackerrank problems(https://www.hackerrank.com/challenges) & CodeChef(https://www.codechef.com).
 Please feel free to contribute.
 
 ## Contribute
