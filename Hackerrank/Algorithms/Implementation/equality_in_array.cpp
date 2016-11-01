@@ -17,9 +17,9 @@ int main()
 		a[k]++;
 	}
 	sort(a,a+101,greater<int>());
-	for(i=0;i<n;i++){
+	/*for(i=0;i<n;i++){
 		printf("%d ",a[i] );
-	}
+	}*/
 	printf("%d\n",n-a[0]);
 	return 0;
 }
