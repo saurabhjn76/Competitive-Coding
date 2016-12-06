@@ -131,9 +131,10 @@ int main()
 {
     char exp[1000];
     int t;
+    scanf("%d",&t);
     while(t--){
     scanf("%s",exp);
     infixToPostfix(exp);
 }
     return 0;
-}
+} 
