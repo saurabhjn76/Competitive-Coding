@@ -5,7 +5,7 @@ using namespace std;
 # define GETCHAR getchar_unlocked
 typedef long long ll;
 
- bool prime[10000+1];
+ bool prime[1000000+1];
 void SieveOfEratosthenes(int n)
 {
     // Create a boolean array "prime[0..n]" and initialize
@@ -55,7 +55,7 @@ inline int readInt() {
 int main()
 {
   int t=readInt();
-  SieveOfEratosthenes(10000);
+  SieveOfEratosthenes(1000000);
   while(t--){
   	
   	int n;
