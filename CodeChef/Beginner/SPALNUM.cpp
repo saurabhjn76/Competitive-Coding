@@ -26,46 +26,46 @@ inline int readInt() {
     }
     return n;
 }
- int gcd( int a, int b)
-{
-     int rem,max,min;
-
- //printf("Enter the TWo no. for HCF calculation \n");
- // scanf("%d%d",&a,&b);
- if(a>=b)
-
- {   max=a;
-     min=b;
-
-  }
- else
+bool isPalindrome(int i){
+	int n = i;
+ int rev = 0;
+ int dig;
+ while (n > 0)
  {
-   max=b;
-   min=a;
-
-  }
- while(min!=0)
-    {
-
-      rem=max%min;
-      max=min;
-      min=rem;
-
-     }
- // printf("The hcf of given number %d & %d is :%d\n",a,b,max);
- return max;
+      dig = n % 10;
+      rev = rev * 10 + dig;
+      n = n / 10;
  }
+ if(i==rev)
+ 	return true;
+ else
+ 	return false;
+}
 
 int main()
 {
   int t=readInt();
+  int a[100003];
+  ll sum=0;
+  for(int i=0;i<100002;i++){
+  	if(isPalindrome(i))
+  	{
+  		sum+=i;
+  		
+  		/*if(i<10)
+  		printf("%d\n", a[i]);*/
+  	}
+  	a[i]=sum;
+  }
   while(t--){
-  int a,b;
-  cin >> a >> b;
-  	printf("%d %d\n",gcd(a,b),a*b/gcd(a,b));
+  	int l,r;
+  	cin >> l >> r;
+  	//printf("%d %d\n",l ,r );
+  	printf("%d\n",a[r]-a[l-1]);
 
-  
+
   }
 	
 	return 0;
 }
+	

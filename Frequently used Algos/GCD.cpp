@@ -20,3 +20,11 @@
  // printf("The hcf of given number %d & %d is :%d\n",a,b,max);
  return max;
  }
+
+ ///--------------------------
+ int gcf(int a, int b)
+{
+    if (a == 0)
+        return b;
+    return gcf(b%a, a);
+} 

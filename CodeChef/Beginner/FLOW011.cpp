@@ -26,46 +26,19 @@ inline int readInt() {
     }
     return n;
 }
- int gcd( int a, int b)
-{
-     int rem,max,min;
-
- //printf("Enter the TWo no. for HCF calculation \n");
- // scanf("%d%d",&a,&b);
- if(a>=b)
-
- {   max=a;
-     min=b;
-
-  }
- else
- {
-   max=b;
-   min=a;
-
-  }
- while(min!=0)
-    {
-
-      rem=max%min;
-      max=min;
-      min=rem;
-
-     }
- // printf("The hcf of given number %d & %d is :%d\n",a,b,max);
- return max;
- }
 
 int main()
 {
   int t=readInt();
   while(t--){
-  int a,b;
-  cin >> a >> b;
-  	printf("%d %d\n",gcd(a,b),a*b/gcd(a,b));
-
-  
+ float  a;
+  cin >> a;
+  if(a<1500)
+  	printf("%g\n", 2*a  );
+  else
+  	printf("%g\n",1.98*a + 500 );
   }
 	
 	return 0;
 }
+	
