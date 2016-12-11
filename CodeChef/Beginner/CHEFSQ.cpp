@@ -31,17 +31,33 @@ int main()
 {
   int t=readInt();
   while(t--){
-  	int n;
-  	cin >> n;
-  	int j,xo=1;
-  	for(int i=0;i<2*n;i++)
-  		cin >> j;
-  	for(int i=2;i<=n;i++){
-  		xo=xo^i;
-  	}
-  	printf("%d\n",xo );
+   int n;
+   cin >> n;
+   int a[n];
+   for(int i=0;i<n;i++){
+   	cin >> a[i];
+
+   }
+   int m;
+   cin >> m;
+   int b[m];
+   for(int i=0;i<m;i++)
+   	cin >> b[i];
+   int flag=0,j=0;
+   for(int i=0; i<=n;i++){
+   		if(a[i]==b[j])
+   		j++;
+   		if(j==m-1)
+   		{
+   			flag=1;
+   			printf("Yes\n");
+   			break;
+   		}	
+   	}
+   	if(flag==0)
+   		printf("No\n");
+   
   }
 	
 	return 0;
 }
-	

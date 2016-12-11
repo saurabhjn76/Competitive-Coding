@@ -5,6 +5,12 @@ using namespace std;
 # define GETCHAR getchar_unlocked
 typedef long long ll;
 
+int min(int a,int b){
+	return a <b ? a : b;
+}
+int max(int a,int b){
+	return a >b ? a : b;
+}
 inline ll  readllInt() {
     ll  n = 0;
     char c;
@@ -31,16 +37,20 @@ int main()
 {
   int t=readInt();
   while(t--){
-  	int n;
-  	cin >> n;
-  	int j,xo=1;
-  	for(int i=0;i<2*n;i++)
-  		cin >> j;
-  	for(int i=2;i<=n;i++){
-  		xo=xo^i;
-  	}
-  	printf("%d\n",xo );
-  }
+  long long int n,k;
+  cin >> n >>k;
+  long long int kk,count=0;
+  for(long long int i=0;i<n;i++){
+  		cin >> kk;
+  		if(kk-min(kk%k,k-kk%k)>0)
+  			count+=min(kk%k,k-kk%k);
+  		else
+  			count+=k-kk%k;
+
+
+  } 	
+  printf("%lld\n",count);
+ }
 	
 	return 0;
 }
