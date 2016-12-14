@@ -29,9 +29,26 @@ inline int readInt() {
 
 int main()
 {
-  int t=readInt();
+	string s;
+	cin >> s;
+	bool a[26];
+	fill_n(a,26,false);
+	for(int i=0;i<s.length();i++){
+		a[s[i]-'a']=true;
+	}
+  int t;
+  cin >> t;
   while(t--){
-  
+  	string ss;
+  	cin >> ss;
+  	for(int i=0;i<ss.length();i++){
+  		if(!a[ss[i]-'a']){
+  			printf("No\n");
+  			break;
+  		}
+  		else if(i==ss.length()-1)
+  			printf("Yes\n");
+  	}
   }
 	
 	return 0;
