@@ -26,28 +26,20 @@ inline int readInt() {
     }
     return n;
 }
+int sum(int n){
+	return (n*(n+1))/2;
+}
 
 int main()
 {
   int t=readInt();
   while(t--){
-  	int z=0,o=0,n,j;
-  		cin >> n;
-  		for(int i=0;i<n;i++)
-  		{
-  			cin >> j;
-  			if(j==0)
-  				z++;
-  			else
-  				o++;
-  		}
-  		int ans=0;
-  		if(o%2==1)
-  			printf("%d\n",o );
-  		else
-  			printf("%d\n",z );
-
-  }
+  int d,n;
+  cin >> d >> n;
+  for(int i=0;i<d;i++)
+  	n=sum(n);
+  printf("%d\n",n );
+}
 	
 	return 0;
 }

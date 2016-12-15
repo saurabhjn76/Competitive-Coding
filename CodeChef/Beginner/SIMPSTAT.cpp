@@ -31,22 +31,21 @@ int main()
 {
   int t=readInt();
   while(t--){
-  	int z=0,o=0,n,j;
-  		cin >> n;
-  		for(int i=0;i<n;i++)
-  		{
-  			cin >> j;
-  			if(j==0)
-  				z++;
-  			else
-  				o++;
+  	int n,k;
+  	cin >> n >> k;
+  	int a[n];
+  	//printf("%d %d\n",n,k );
+  	for(int i=0;i<n;i++){
+  		cin >> a[i];
+  	}
+  	sort(a,a+n);
+  	double sum=0;
+  	for(int i=k;i<n-k;i++)
+  		{	printf("%d\n",a[i] );
+  			sum+=a[i];
   		}
-  		int ans=0;
-  		if(o%2==1)
-  			printf("%d\n",o );
-  		else
-  			printf("%d\n",z );
-
+  	printf("%f\n",sum/(n-2*k));
+  
   }
 	
 	return 0;
