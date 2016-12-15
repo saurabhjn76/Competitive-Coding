@@ -31,21 +31,16 @@ int main()
 {
   int t=readInt();
   while(t--){
-  	int n,k;
-  	cin >> n >> k;
-  	int a[n];
-  	//printf("%d %d\n",n,k );
-  	for(int i=0;i<n;i++){
-  		cin >> a[i];
+  string s,s1;
+  cin >> s >> s1;
+  for(int i=0;i<s.length();i++){
+  	if(s[i]=='B' && s1[i]=='B'){
+  		printf("W");
   	}
-  	sort(a,a+n);
-  	double sum=0;
-  	for(int i=k;i<n-k;i++)
-  		{	//printf("%d\n",a[i] );
-  			sum+=a[i];
-  		}
-  	printf("%f\n",sum/(n-2*k));
-  
+  	else
+  		printf("B");
+  }
+  printf("\n");
   }
 	
 	return 0;

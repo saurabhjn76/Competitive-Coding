@@ -29,23 +29,31 @@ inline int readInt() {
 
 int main()
 {
-  int t=readInt();
+  int t;
+  cin >> t;
+
   while(t--){
-  	int n,k;
-  	cin >> n >> k;
-  	int a[n];
-  	//printf("%d %d\n",n,k );
-  	for(int i=0;i<n;i++){
+  int n;
+  cin >> n;
+  ll a[n],b[n],count=1;
+  for(int i=0;i<n;i++){
   		cin >> a[i];
+  }
+  for(int i=n-1;i>=0;i--)
+  {
+  	b[i]=count;
+  	if(i==0)
+  		break;
+  	if((a[i-1]<0 && a[i]<0) || (a[i-1]>=0 && a[i] >=0))
+  	{
+  		count=1;
   	}
-  	sort(a,a+n);
-  	double sum=0;
-  	for(int i=k;i<n-k;i++)
-  		{	//printf("%d\n",a[i] );
-  			sum+=a[i];
-  		}
-  	printf("%f\n",sum/(n-2*k));
-  
+  	else
+  		count++;
+  }
+  for(int i=0;i<n-1;i++)
+  	printf("%lld ",b[i] );
+  	printf("%lld\n",b[n-1] );
   }
 	
 	return 0;
