@@ -26,9 +26,24 @@ inline int readInt() {
     }
     return n;
 }
-ll max (ll a,ll b)
+ll solve(ll a, ll b, ll c, ll d)
 {
-	return a>b?a:b;
+	if (a > b or c > d or d < a)
+		return 0;
+ 
+	if (b > d)
+		b = d;
+ 
+	if (c < a)
+		c = a;
+ 
+	if (b < c)
+		return (b-a+1)*(d-c+1);
+ 
+	ll ans = (b-a+1)*(d-c+1);
+	ans -= (b-c+1)*(b-c+2)/2;
+ 
+	return ans;
 }
 int main()
 {
@@ -36,11 +51,8 @@ int main()
   while(t--){
   ll a,b,c,d;
   cin >> a >> b >> c >> d;
-  ll count=0;
-  for(ll i=a;i<=b;i++)
-  	count+=max(d-max(c,i+1)+1,0);
-
-  printf("%lld\n",count);
+  
+  printf("%lld\n",solve(a,b,c,d));
 	}	
 	return 0;
 }
