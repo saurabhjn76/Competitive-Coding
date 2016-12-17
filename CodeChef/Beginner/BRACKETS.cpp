@@ -31,7 +31,17 @@ int main()
 {
   int t=readInt();
   while(t--){
-  
+  string s;
+  cin >> s;
+  int max_balance=0,current_balance=0,first_index=0,last_index=0;
+  	for(int i=0;i<s.length();i++){
+  		if(s[i]=='(')
+  			current_balance++;
+  		if(s[i]==')')
+  			current_balance--;
+  		max_balance= max(max_balance,current_balance);
+  	}
+  	printf("%d\n",max_B );
   }
 	
 	return 0;
