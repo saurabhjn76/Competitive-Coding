@@ -31,7 +31,10 @@ int main()
 {
   int t=readInt();
   while(t--){
-  
+ 		int n,m;
+ 		
+ 		cin >> n >> m;
+ 		printf("%d\n",n+m-2+2*(n-1)*(m-1)); 
   }
 	
 	return 0;
