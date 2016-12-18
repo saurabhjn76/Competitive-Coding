@@ -69,7 +69,8 @@ int main()
   	for(int i=n-1;i>=0;i--){
   		precalc[i]=second_half[i]+precalc[i-1];
   	}
-  	for(i=0;i<n;i++){
+  	ll ans=0;
+  	for(i=0;i<n+1;i++){
 
   	}
 
