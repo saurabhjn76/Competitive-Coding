@@ -41,7 +41,14 @@ int main()
   			current_balance--;
   		max_balance= max(max_balance,current_balance);
   	}
-  	printf("%d\n",max_B );
+  //	printf("%d\n",max_balance );
+  	for(int i=0;i<max_balance;i++){
+  		printf("(");
+  	}
+  	for(int i=0;i<max_balance;i++){
+  		printf(")");
+  	}
+  	printf("\n");
   }
 	
 	return 0;

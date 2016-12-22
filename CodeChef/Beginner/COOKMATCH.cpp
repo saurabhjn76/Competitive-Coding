@@ -31,7 +31,18 @@ int main()
 {
   int t=readInt();
   while(t--){
-  
+  ll a,b;
+  cin >> a >> b;
+  int steps=0;
+  while(a!=b){
+  	if(a>b){
+  		a/=2;
+  	}
+  	else
+  		b/=2;
+  steps++;
+}
+printf("%d\n",steps);
   }
 	
 	return 0;
