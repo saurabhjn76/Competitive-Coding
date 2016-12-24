@@ -29,33 +29,31 @@ inline int readInt() {
 
 int main()
 {
-  //int t=readInt();
-	int t=1;
+  int t=readInt();
   while(t--){
-  ll i,j,n,k;
-  cin >> n >> k;
-  int a[n];
-  ll b[n];
-  for(i=0;i<n;i++){
-  	cin >> a[i];
+  int n,m,i,j,k;
+  cin >> n >> m;
+  bool a[n+1];
+  fill_n(a,n+1,false);
+  for(i=1;i<=m;i++){
+  	cin >> k;
+  	a[k]=true;
   }
-  b[0]=a[0];
-
-  for(i=1;i<n;i++){
-  	ll min=100000000;
-  	int start=i-k>0?i-k:0;
-  	for(j=start;j<i;j++){
-  		if(min>b[j]%MOD){
-  			min=b[j]%MOD;
-  		}
+  int count=0;
+  for(i=1;i<=n;i++){
+  	if(!a[i]){
+  		if(count%2==0)
+  			{ printf("%d ",i );
+  			   a[i]=true;
+  			}
+  		count++;
   	}
-  	b[i]=((min%MOD)*(a[i]%MOD))%MOD;
   }
- 	/*for(i=0;i<n;i++){
- 		printf("%lld\n",b[i] );
- 	}*/
- 		printf("%lld\n",b[n-1]);
-
+  printf("\n");
+  for(i=1;i<n+1;i++)
+  	if(!a[i])
+  		printf("%d ",i);
+  	printf("\n");
 
   }
 	
