@@ -16,25 +16,24 @@ typedef long long ll;
 
 int main()
 {
-  int t;
-  cin >> t;
+  int t=1;
+  //cin >> t;
   while(t--){
-  int n;
-  s(n);
-  int a[n];
-  for(int i=0;i<n;i++){
-  	s(a[i]);
-  }
-  int k;
-  s(k);
-  //printf("%d\n",k );
-  int count=0;
-  for(int i=0;i<n;i++){
-  	if(a[i]<a[k-1])
-  		count++;
-  }
- printf("%d\n",count+1 );
-
+  	ll n,a,k,j=0;
+  	cin >> n >> a >> k;
+  	ll aa[k+1];
+  	fill_n(aa,k,0);
+  	while(n>0 ){
+  		aa[j]=n%(a+1);
+  		n/=(a+1);
+  		j++;
+      if(j==k)
+        break;
+  	}
+  	for(ll i=0;i<k;i++){
+  		printf("%lld ",aa[i] );
+  	}
+  	printf("\n");
   }
 	
 	return 0;
