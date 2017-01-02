@@ -34,26 +34,30 @@ int commonChars(char *s1, char *s2)
 typedef long long ll;
 
 int main()
-{
-  int t;
-  cin >> t;
-  while(t--){
- 	char a[200],b[200];
- 	ss(a);ss(b);
- 	int count=0;
- 	for(int i=0;i<strlen(a);i++){
- 		for(int j=0;j<strlen(b);j++){
- 			if(a[i]==b[j])
- 				{
- 					count++;
- 					break;
- 				}
- 		}
- 	}
- 	printf("%d\n",count );
- 	//printf("%d\n",commonChars(a,b) );	 
-  }
-	
-	return 0;
+{  
+   int t,i,j1,s1,k,count;
+   char s[1001],j[1001];
+   scanf("%d",&t);
+   while(t--)
+   {         count=0;
+             scanf("%s",j);
+             scanf("%s",s);
+             j1=strlen(j);
+             s1=strlen(s);
+             for(i=0;i<s1;i++)
+             for(k=0;k<j1;k++)
+                             
+                             if(s[i]==j[k])
+                             {count++;
+                            
+                              break;}
+                              
+                              
+                            printf("%d\n",count);
+                            
+                            }
+                       
+                            return 0;
+                            
 }
-	
+ 
