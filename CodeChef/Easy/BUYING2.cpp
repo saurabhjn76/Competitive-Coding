@@ -17,33 +17,24 @@ typedef long long ll;
 int main()
 {
   int t;
-  //cin >> t;
-  t=1;
+  cin >> t;
   while(t--){
-  	ll n ,q;
-  	ll x,y,z;
-  	cin >> n >> q;
-  	ll a[n];
-  	for(int i=0;i<n;i++)
-  		cin >> a[i];
-  	for( int i=0;i<q;i++){
-  		int k;
-  		cin >> k;
-  		if(k==1){
-  			ll sum=0;
-  			cin >> x >> y;
-  			for(int j=x-1;j<y;j++)
-  			{
-  				sum+=a[j];
-  			}
-  			printf("%lld\n",sum);
-  		}
-  		else if(k==2){
-  			cin >> x >> y >> z;
-  			for(int j=x-1;j<y;j++)
-  				a[j]=a[j]%z;
-  		}
-  	} 
+  int n ,x;
+  s(n);s(x);
+  int a[n];
+  ll sum=0;
+  for(int i=0;i<n;i++)
+  	{
+  		s(a[i]);
+  		sum+=a[i];
+  	}
+  sort(a,a+n);
+  int max=(int)sum/x;
+  if(max==(int)(sum-a[0])/x)
+  	printf("-1\n");
+  else
+  	printf("%d\n",max );
+
   }
 	
 	return 0;
