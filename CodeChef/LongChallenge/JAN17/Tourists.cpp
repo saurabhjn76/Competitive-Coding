@@ -58,7 +58,7 @@ int main()
   		s(u);s(v);
   		edg[i][0]=u;edg[i][1]=v;
   		sett[u].push_back(v);
-  		sett[v].push_back(u);
+  		//sett[v].push_back(u);
   		a[u][0]++;
   		a[v][1]++;
   	}
@@ -85,7 +85,7 @@ int main()
   		printf("NO\n");
   	//sort_by_index(b,n+1);
   	if(sum==0 && flag){
-  	for(int i=1;i<n+1;i++){
+  /*	for(int i=1;i<n+1;i++){
   		if(b[i][0]<0){
   			while(b[i][0]!=0){
   				for(vector<int>::iterator it =sett[i].begin();it!=sett[i].end();it++){
@@ -101,13 +101,24 @@ int main()
   				}
   			}
   		}
-  	}
-     if(change_count==0){
+  	}*/
           for(int i=0;i<m;i++){
+            if((b[edg[i][0]][0]<0 && b[edg[i][1]][0]>0 )||((b[edg[i][0]][0]>0 && b[edg[i][1]][0]<0))){
+              if(b[edg[i][0]][0]<b[edg[i][1]][0]){
+                b[edg[i][1]][0]-=2;
+                b[edg[i][0]][0]+=2;
+              }
+              else
+              {
+                b[edg[i][1]][0]+=2;
+                b[edg[i][0]][0]-=2;
+              }
+              printf("%d %d\n",edg[i][1],edg[i][0] );
+            }
+            else
             printf("%d %d\n",edg[i][0],edg[i][1]);
           }
-     }
-     else{
+    /* else{
             for(int i=0;i<m;i++){
               if((a[edg[i][0]][0]-a[edg[i][0]][1])!=0){
               for(int j=0;j<change_count;j++){
@@ -126,7 +137,7 @@ int main()
               printf("%d %d\n",edg[i][0],edg[i][1]);
             }
             }
-          }
+          }*/
 
   }
 }
