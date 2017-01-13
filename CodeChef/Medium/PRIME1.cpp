@@ -22,7 +22,7 @@ void SieveOfEratosthenes(int n)
    
     memset(prime, true, sizeof(prime));
  
-    for (int p=2; p*p<=n; p++)
+    for (int p=2; p*p<=n; p++) 	
     {
         // If prime[p] is not changed, then it is a prime
         if (prime[p] == true)
