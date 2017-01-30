@@ -7,6 +7,10 @@ using namespace std;
 # define sf(n)                       scanf("%lf",&n)
 # define ss(n)                       scanf("%s",n)
 
+#define REP(i,n) for(int i=0;i<(n);i++)
+#define FOR(i,a,b) for(int i=(a);i<=(b);i++)
+#define FORD(i,a,b) for(int i=(a);i>=(b);i--)
+
 # define INF                         (int)1e9
 # define EPS                         1e-9
 # define MOD 1000000007
@@ -18,24 +22,25 @@ int main()
 {
   int t;
   cin >> t;
-  string s1;
-  cin >> s1;
   while(t--){
-  string s2;
-  cin >> s2;
-  for(int i=0;i<s2.length();i++){
-  	if(s2[i]>=65 && s2[i]<=65+25){
-  		printf("%c",s1[s2[i]-65]-97+65 );
-  	}
-  	else if(s2[i]=='_')
-  		printf(" ");
-  	else if(s2[i]>=97 && s2[i]<=97+25){
-  		printf("%c",s1[s2[i]-97]);
-  	}
-  	else
-  		printf("%c",s2[i] );
+  int k;s(k);
+  if(360%k==0){
+  	printf("y ");
   }
-  printf("\n");
+  else
+  	printf("n ");
+
+  if(360>=k)
+  	printf("y ");
+  	else
+  	printf("n ");
+  
+
+  if((k*(k+1))/2<=360)
+  	printf("y\n");
+  else
+  	printf("n\n");
+
   }
 	
 	return 0;
