@@ -22,17 +22,19 @@ int main()
 {
   int t;
   cin >> t;
-  double l,d,s,c;
   while(t--){
-  // the formula evaaluates to s*(1+c)^(d-1)
-  	sf(l);sf(d);sf(s);sf(c);
-  	s=s*pow(1+c,d-1);
-  	if(s>=l)
-  		printf("ALIVE AND KICKING\n");
-  	else
-  		printf("DEAD AND ROTTING\n");
-
+  int  n;s(n);
+  ll a[n];
+  FORD(i,n-1,0){
+  	sl(a[i]);
+  }
+  ll count=0;
+  REP(i,n){
+  	count=max(a[i],count+1);
+  }
+  printf("%lld\n",count);
   }
 	
 	return 0;
-}x
+}
+	

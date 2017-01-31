@@ -22,17 +22,17 @@ int main()
 {
   int t;
   cin >> t;
-  double l,d,s,c;
   while(t--){
-  // the formula evaaluates to s*(1+c)^(d-1)
-  	sf(l);sf(d);sf(s);sf(c);
-  	s=s*pow(1+c,d-1);
-  	if(s>=l)
-  		printf("ALIVE AND KICKING\n");
-  	else
-  		printf("DEAD AND ROTTING\n");
-
+  string s;
+  cin >> s;
+  ll count=0;
+  REP(i,s.length()){
+  	if(s[i]!='4' && s[i]!='7' )
+  		count++;
+  }
+  printf("%lld\n",count);
   }
 	
 	return 0;
-}x
+}
+	
