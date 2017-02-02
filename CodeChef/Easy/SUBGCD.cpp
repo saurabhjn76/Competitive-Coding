@@ -18,19 +18,27 @@ using namespace std;
 
 typedef long long ll;
 
+int gcf(int a, int b)
+{
+    if (a == 0)
+        return b;
+    return gcf(b%a, a);
+} 
+
 int main()
 {
   int t;
   cin >> t;
-  
-  while(t!=0){
-  	int a[t];
-  	R(i,t)
-  	s(a[i]);
-  	sort(a,a+t);
-  
+  while(t--){
+  int n;s(n);int a[n];R(i,n){s(a[i]);} int gc=gcf(a[0],a[1]);
+  R(i,n-1){
+  	gc=gcf(gc,a[i+1]);
+  }
+  if(gc==1)
+  printf("%d\n",n);
+  else
+  printf("-1\n"); 
   }
 	
 	return 0;
 }
-	
