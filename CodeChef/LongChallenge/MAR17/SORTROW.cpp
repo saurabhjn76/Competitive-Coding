@@ -18,35 +18,26 @@ using namespace std;
 
 typedef long long ll;
 
-bool check(int a[],int n){
-	R(i,n-1){
-		if(a[i]==0 && a[i+1]==1)
-			return false;
-	}
-	return true;
-}
 int main()
 {
-  int t;
-  cin >> t;
+  int t=1,aa;
+  //cin >> t;
   while(t--){
-  int n;
-  s(n); int a[n];
-  R(i,n) s(a[i]);
-  int coun=0;
-  while(!check(a,n)){
-  for(int i=0;i<n-1;i++){
-  	if(a[i]==0 && a[i+1]==1){
-  		a[i]=1;a[i+1]=0;
-  		i++;
+  int n; s(n); vector<int> v[n];
+  R(i,n){
+  	R(j,n){
+  		s(aa);
+  		v[i].push_back(aa);
   	}
+  	sort(v[i].begin(),v[i].end());
   }
-  coun++;
-  R(j,n)
-  	printf("%d ",a[j] );
-  printf("\n");
-}
-printf("%d\n",coun );
+  R(i,n){
+  	R(j,n){
+  		printf("%d ",v[i][j]);
+  	}
+  	printf("\n");
+  }
+
   }
 	
 	return 0;
