@@ -1,0 +1,15 @@
+#include<iostream>
+#include<string.h>
+using  namespace std;
+int main()
+{
+	string abc,new1;
+	cin>>abc;
+	for(int i=abc.length();i>0;i--)
+
+	{
+		new1[abc.length()-i]=abc[i];
+	}
+	cout<<new1;
+	return 0;
+}
