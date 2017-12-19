@@ -1,3 +1,4 @@
+//http://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -18,32 +19,24 @@ using namespace std;
 
 typedef long long ll;
 
-bool fun(ll i ){
-  if(i==2)
-    return true;
-  if(i%2==0 || i==1)
-    return false;
-  for(ll j = 3 ; j*j<=i;j+=2){
-    if(i%j==0)
-      return false;
-  }
-  return true;
-}
-
 int main()
 {
   int t;
   cin >> t;
   while(t--){
-    ll n , m;
-    sl(n); sl(m);
-    for(ll i =n ; i<m+1 ;i++){
-       if(fun(i)){
-        printf("%lld\n",i );
-       }
+    string s1,s2;
+    cin >> s1 >> s2;
+    int a[26], int b[26];
+    fill_n(a,26,0);
+    fill_n(b,26,0);
+    R(i,s1.length()){
+    	a[s1[i]-'a']++;
     }
-    printf("\n");
+    R(i,s2.length()){
+    	b[s2[i]-'a']++;
+    }
+    int start_index
   }
-  
-  return 0;
+	
+	return 0;
 }

@@ -18,32 +18,46 @@ using namespace std;
 
 typedef long long ll;
 
-bool fun(ll i ){
-  if(i==2)
-    return true;
-  if(i%2==0 || i==1)
-    return false;
-  for(ll j = 3 ; j*j<=i;j+=2){
-    if(i%j==0)
-      return false;
-  }
-  return true;
-}
-
 int main()
 {
-  int t;
-  cin >> t;
-  while(t--){
-    ll n , m;
-    sl(n); sl(m);
-    for(ll i =n ; i<m+1 ;i++){
-       if(fun(i)){
-        printf("%lld\n",i );
-       }
-    }
-    printf("\n");
+	int L=40;
+	int a[L][L];
+	{
+	//R(L,20){
+  R(i,L){
+  	R(j,L){
+  		a[i][j]=i+j+2;
+  	//
+  		//printf("%d ",a[i][j]);
+  	}
+  	
+  //	printf("\n");
   }
-  
-  return 0;
+ printf("-----------------\n");
+  int sum=0;
+  R(i,L){
+  	R(j,L){
+  		int sum_even=0,sum_odd=0,count=0;
+  		while(a[i][j]>0){
+  			if((a[i][j]%10)%2==0){
+  				sum_even+=a[i][j]%10;
+  			} else {
+  				sum_odd+=a[i][j]%10; 
+  			}
+  			a[i][j]/=10;
+  			count++;
+  		}
+  		a[i][j]=abs(sum_odd-sum_even);
+  		sum+=a[i][j];
+  		if(j<=i)
+  		printf("%d ",a[i][j] );
+  	}
+ 	printf("\n");
+  }
+  printf("%d-%d\n",L,sum );
+}
+
+
+	
+	return 0;
 }

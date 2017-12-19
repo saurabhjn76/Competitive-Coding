@@ -18,32 +18,29 @@ using namespace std;
 
 typedef long long ll;
 
-bool fun(ll i ){
-  if(i==2)
-    return true;
-  if(i%2==0 || i==1)
-    return false;
-  for(ll j = 3 ; j*j<=i;j+=2){
-    if(i%j==0)
-      return false;
-  }
-  return true;
-}
-
 int main()
 {
   int t;
   cin >> t;
   while(t--){
-    ll n , m;
-    sl(n); sl(m);
-    for(ll i =n ; i<m+1 ;i++){
-       if(fun(i)){
-        printf("%lld\n",i );
-       }
+    int n;
+    s(n);
+    int a;
+    int one_piles=0;
+    R(i,n){
+    	s(a);
+    	if(a==1){
+    		one_piles++;
+    	}
     }
-    printf("\n");
+    if(one_piles%2!=0){
+    	printf("2\n");
+    } else {
+    	printf("1\n");
+    }
+
+
   }
-  
-  return 0;
+	
+	return 0;
 }

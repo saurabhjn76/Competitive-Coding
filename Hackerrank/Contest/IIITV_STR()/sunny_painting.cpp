@@ -18,32 +18,15 @@ using namespace std;
 
 typedef long long ll;
 
-bool fun(ll i ){
-  if(i==2)
-    return true;
-  if(i%2==0 || i==1)
-    return false;
-  for(ll j = 3 ; j*j<=i;j+=2){
-    if(i%j==0)
-      return false;
-  }
-  return true;
-}
-
 int main()
 {
   int t;
   cin >> t;
   while(t--){
-    ll n , m;
-    sl(n); sl(m);
-    for(ll i =n ; i<m+1 ;i++){
-       if(fun(i)){
-        printf("%lld\n",i );
-       }
-    }
-    printf("\n");
+   	ll m,n;
+   	sl(m);sl(n);
+   	printf("%lld\n",(((m%MOD)*(n%MOD))%MOD*(n+1))%MOD); 
   }
-  
-  return 0;
+	
+	return 0;
 }

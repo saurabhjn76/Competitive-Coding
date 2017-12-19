@@ -23,20 +23,31 @@ int main()
   int t;
   cin >> t;
   while(t--){
-    int n,l;
-    s(n);
-    int v[n];
+    int n,m;
+    s(n);s(m);
+    string s[n];
     R(i,n){
-    	R(j,4){
-    		s(l);
-    		v[i].push_back(l);
+    	cin >> s[i];
+    }
+    int cost1=0,cost2=0;
+    R(i,n){
+    	R(j,m){
+    		if((i+j)%2==0){
+    			if(s[i][j]!='R'){
+    				cost1+=3;
+    			} else {
+    				cost2+=5;
+    			}
+    		} else {
+    			if(s[i][j]!='G'){
+    				cost1+=5;
+    			} else {
+    				cost2+=3;
+    			}
+    		}
     	}
     }
-    int q;
-    s(q);
-    R(i,q){
-    	
-    }
+    printf("%d\n",min(cost2,cost1) );
   }
 	
 	return 0;
