@@ -1,4 +1,5 @@
 #include "bits/stdc++.h"
+#define FAST ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 using namespace std;
 
 # define s(n)                        scanf("%d",&n)
@@ -20,6 +21,7 @@ typedef long long ll;
 
 int main()
 {
+  FAST;
   int t;
   cin >> t;
   while(t--){
